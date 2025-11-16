@@ -1,3 +1,4 @@
+/* Общие стили для сайта */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #121212;
@@ -14,6 +15,12 @@ body {
 section {
     padding: 100px 20px;
     text-align: center;
+    opacity: 0; /* Изначально скрытые элементы */
+    transition: opacity 1s ease-in-out; /* Плавное появление */
+}
+
+section.visible {
+    opacity: 1; /* Показываем элемент */
 }
 
 #intro {
@@ -24,4 +31,32 @@ section {
     align-items: center;
     justify-content: center;
     color: #fff;
+}
+
+/* Стили для треков */
+#track1, #track2, #credits {
+    background-color: #1a1a1a;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+#track1 h2, #track2 h2 {
+    font-size: 2.5rem;
+    color: #f1c40f;
+}
+
+/* Добавляем анимацию для прокрутки */
+.fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
