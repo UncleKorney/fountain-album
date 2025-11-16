@@ -31,3 +31,16 @@ audioElements.forEach((audio, index) => {
         }
     });
 });
+
+// Прокрутка до текущего трека
+document.addEventListener("DOMContentLoaded", function() {
+    const audio = new Audio('audio/track1.mp3'); // Путь к первому треку
+    audio.loop = true;
+
+    // Добавляем проигрывание при загрузке страницы
+    audio.play().then(() => {
+        console.log("Музыка начала играть!");
+    }).catch((error) => {
+        console.log("Ошибка при запуске музыки: ", error);
+    });
+});
