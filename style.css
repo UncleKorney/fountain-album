@@ -24,15 +24,16 @@ section.visible {
 }
 
 #intro {
-    background: url('https://unclekorney.github.io/fountain-album/images/intro-bg.jpg') no-repeat center center fixed;
+    background-image: url('https://unclekorney.github.io/fountain-album/images/intro-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
     background-size: cover;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
-    position: relative;
-    z-index: -1; /* Это гарантирует, что фон будет на заднем плане */
 }
 
 /* Стили для треков */
