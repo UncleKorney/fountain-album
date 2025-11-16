@@ -296,3 +296,32 @@ p {
     background: rgba(44, 62, 80, 1);
     transform: translateY(-5px);
 }
+
+/* Добавление стилей для динамичных элементов */
+.rat {
+    position: absolute;
+    animation: move-rat 15s linear infinite;
+}
+
+@keyframes move-rat {
+    0% {
+        left: -100px;
+        top: 80%;
+    }
+    25% {
+        left: 25%;
+        top: 40%;
+    }
+    50% {
+        left: 50%;
+        top: 60%;
+    }
+    75% {
+        left: 75%;
+        top: 30%;
+    }
+    100% {
+        left: 100%;
+        top: 80%;
+    }
+}
