@@ -246,24 +246,6 @@ p {
     }
 }
 
-/* Новый стиль для неоновых огней и анимации */
-h1.neon-light, h2.neon-light {
-    text-shadow: 0 0 5px rgba(241, 196, 15, 0.7), 0 0 10px rgba(241, 196, 15, 0.6), 0 0 15px rgba(241, 196, 15, 0.5);
-    animation: neon-flicker 1.5s infinite alternate;
-}
-
-@keyframes neon-flicker {
-    0% {
-        text-shadow: 0 0 5px rgba(241, 196, 15, 0.7), 0 0 10px rgba(241, 196, 15, 0.6), 0 0 15px rgba(241, 196, 15, 0.5);
-    }
-    50% {
-        text-shadow: 0 0 3px rgba(241, 196, 15, 0.3), 0 0 5px rgba(241, 196, 15, 0.3), 0 0 7px rgba(241, 196, 15, 0.2);
-    }
-    100% {
-        text-shadow: 0 0 5px rgba(241, 196, 15, 0.7), 0 0 10px rgba(241, 196, 15, 0.6), 0 0 15px rgba(241, 196, 15, 0.5);
-    }
-}
-
 /* Прочие улучшения */
 .fog {
     position: absolute;
@@ -295,12 +277,6 @@ h1.neon-light, h2.neon-light {
     height: 100px;
 }
 
-.background-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 /* Стилизация треков */
 .tracks {
     display: grid;
@@ -312,4 +288,11 @@ h1.neon-light, h2.neon-light {
     background: rgba(44, 62, 80, 0.8);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s;
+}
+
+.track:hover {
+    background: rgba(44, 62, 80, 1);
+    transform: translateY(-5px);
+}
