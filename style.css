@@ -128,6 +128,12 @@ h1 {
     text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
 }
 
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ecf0f1;
+}
+
 /* Стиль для параграфов */
 p {
     font-size: 1.5rem;
@@ -141,11 +147,6 @@ p {
     color: #ddd;
     padding: 50px;
     text-align: center;
-}
-
-#album h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
 }
 
 #album ul {
@@ -182,4 +183,79 @@ p {
     100% {
         transform: translateX(100%);
     }
+}
+
+/* Новый стиль для неоновых огней и анимации */
+h1.neon-light, h2.neon-light {
+    text-shadow: 0 0 5px rgba(241, 196, 15, 0.7), 0 0 10px rgba(241, 196, 15, 0.6), 0 0 15px rgba(241, 196, 15, 0.5);
+    animation: neon-flicker 1.5s infinite alternate;
+}
+
+@keyframes neon-flicker {
+    0% {
+        text-shadow: 0 0 5px rgba(241, 196, 15, 0.7), 0 0 10px rgba(241, 196, 15, 0.6), 0 0 15px rgba(241, 196, 15, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 3px rgba(241, 196, 15, 0.3), 0 0 5px rgba(241, 196, 15, 0.3), 0 0 7px rgba(241, 196, 15, 0.2);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(241, 196, 15, 0.7), 0 0 10px rgba(241, 196, 15, 0.6), 0 0 15px rgba(241, 196, 15, 0.5);
+    }
+}
+
+/* Прочие улучшения */
+.fog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+    z-index: 0;
+    animation: fog-motion 10s infinite linear;
+}
+
+@keyframes fog-motion {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Стиль для элемента rat-king в футере */
+.rat-king-symbol {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Стилизация треков */
+.tracks {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.track {
+    background: rgba(44, 62, 80, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.track-title {
+    text-align: center;
+    color: #ecf0f1;
+    margin-top: 10px;
 }
