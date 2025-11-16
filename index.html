@@ -1,44 +1,45 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Как будто ты в фонтан упал</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <!-- Основной контейнер для сайта -->
+
     <div id="main-container">
-
-        <!-- Вступительный экран с изображением фона -->
-        <section id="intro" style="background: url('https://unclekorney.github.io/fountain-album/images/intro-bg.jpg') no-repeat center center fixed; background-size: cover; height: 100vh;">
-    <h1>Как будто ты в фонтан упал</h1>
-    <p>Добро пожаловать в антиутопический мир, полный сырости, мрака и отчаяния...</p>
+        <!-- Секция Intro с фоном, трещинами и анимацией воды -->
+        <section id="intro">
+            <div class="crack"></div> <!-- Анимация трещин на стенах -->
+            <h1>Как будто ты в фонтан упал</h1>
+            <p>Добро пожаловать в антиутопический мир, полный сырости, мрака и отчаяния...</p>
+            <div class="water"></div> <!-- Анимация воды -->
         </section>
 
-
-        <!-- Дополнительные разделы для треков -->
-        <section id="track1" class="track">
-            <h2>Трек 1: Падение в мрак</h2>
-            <audio id="audio1" controls>
-                <source src="audio/track1.mp3" type="audio/mp3">
-                Ваш браузер не поддерживает элемент audio.
-            </audio>
+        <!-- Пример секции с музыкой (не готово до конца, просто для контекста) -->
+        <section id="album">
+            <h2>Альбом "Как будто ты в фонтан упал"</h2>
+            <ul>
+                <li><a href="#">Трек 1</a></li>
+                <li><a href="#">Трек 2</a></li>
+                <li><a href="#">Трек 3</a></li>
+                <!-- Дальше по списку -->
+            </ul>
         </section>
 
-        <section id="track2" class="track">
-            <h2>Трек 2: Война с Крысиным Королем</h2>
-            <audio id="audio2" controls>
-                <source src="audio/track2.mp3" type="audio/mp3">
-                Ваш браузер не поддерживает элемент audio.
-            </audio>
-        </section>
-
+        <!-- Динамичные крысы -->
+        <div class="rat" style="top: 80%; left: 10%;">
+            <img src="images/rat.png" alt="Rat" />
+        </div>
+        <div class="rat" style="top: 60%; left: 30%;">
+            <img src="images/rat.png" alt="Rat" />
+        </div>
+        <div class="rat" style="top: 90%; left: 50%;">
+            <img src="images/rat.png" alt="Rat" />
+        </div>
     </div>
 
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
