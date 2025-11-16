@@ -70,7 +70,7 @@ body {
         transform: translateY(0);
     }
     100% {
-        transform: translateY(20px);
+        transform: translateY(15px);
     }
 }
 
@@ -86,13 +86,37 @@ body {
         left: -100px;
         top: 80%;
     }
+    25% {
+        left: 25%;
+        top: 40%;
+    }
     50% {
         left: 50%;
-        top: 50%;
+        top: 60%;
+    }
+    75% {
+        left: 75%;
+        top: 30%;
     }
     100% {
         left: 100%;
         top: 80%;
+    }
+}
+
+/* Эффект падения для текста */
+#intro h1 {
+    animation: drop-effect 3s ease-out infinite;
+}
+
+@keyframes drop-effect {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 
@@ -142,26 +166,20 @@ p {
     text-decoration: underline;
 }
 
-/* Стиль для секций, которые будут появляться */
-section {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+/* Канализационные трубы */
+.pipe {
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+    animation: move-pipe 5s linear infinite;
+    z-index: 0;
 }
 
-section.visible {
-    opacity: 1;
-}
-
-/* Эффект для плавного появления */
-section.fade-in {
-    animation: fadeInAnimation 1s forwards;
-}
-
-@keyframes fadeInAnimation {
+@keyframes move-pipe {
     0% {
-        opacity: 0;
+        transform: translateX(-100%);
     }
     100% {
-        opacity: 1;
+        transform: translateX(100%);
     }
 }
