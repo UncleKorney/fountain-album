@@ -17,41 +17,43 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
-// Прокрутка до текущего трека
-function scrollToTrack(index) {
-    const tracks = document.querySelectorAll('.track');
-    tracks[index].scrollIntoView({ behavior: 'smooth' });
-}
+// Функция для воспроизведения треков
+let audio = new Audio();
+let currentTrackIndex = 0; // Индекс текущего трека
+const tracks = document.querySelectorAll('.track'); // Список всех треков
+const trackFiles = ['audio/track1.mp3', 'audio/track2.mp3', 'audio/track3.mp3']; // Пути к трекам
 
-// Обработчик для воспроизведения первого трека по клику
-document.addEventListener("DOMContentLoaded", function() {
-    const audio = new Audio('audio/track1.mp3'); // Путь к первому треку
-    let hasPlayed = false;
-
-    // Воспроизведение музыки по клику
-    document.body.addEventListener('click', () => {
-        if (!hasPlayed) {
-            audio.play().then(() => {
-                console.log("Музыка начала играть!");
-                hasPlayed = true;
-            }).catch((error) => {
-                console.log("Ошибка при запуске музыки: ", error);
-            });
-        }
-    });
-
-    // Когда трек заканчивается, переключаемся на следующий
-    const audioElements = document.querySelectorAll('audio');
-    const tracks = document.querySelectorAll('.track');
-
-    audioElements.forEach((audio, index) => {
-        audio.addEventListener('ended', () => {
-            if (index + 1 < audioElements.length) {
-                audioElements[index + 1].play();
-                tracks[index + 1].scrollIntoView({ behavior: 'smooth' });
-            }
+// Воспроизведение музыки по клику на страницу
+document.body.addEventListener('click', () => {
+    if (!audio.src) { // Если аудио еще не загружено, загружаем первый трек
+        audio.src = trackFiles[currentTrackIndex];
+        audio.play().then(() => {
+            console.log("Музыка начала играть!");
+        }).catch((error) => {
+            console.log("Ошибка при запуске музыки: ", error);
         });
+    }
+});
+
+// Когда трек заканчивается, переключаемся на следующий
+audio.addEventListener('ended', () => {
+    currentTrackIndex++;
+
+    // Если мы дошли до конца треков, начинаем сначала
+    if (currentTrackIndex >= trackFiles.length) {
+        currentTrackIndex = 0;
+    }
+
+    // Переключаем трек и начинаем его воспроизведение
+    audio.src = trackFiles[currentTrackIndex];
+    audio.play().then(() => {
+        console.log(`Играет трек ${currentTrackIndex + 1}`);
+    }).catch((error) => {
+        console.log("Ошибка при воспроизведении трека: ", error);
     });
+
+    // Прокрутка к новому треку
+    tracks[currentTrackIndex].scrollIntoView({ behavior: 'smooth' });
 });
 
 // Добавление фона с трещинами
@@ -120,16 +122,3 @@ function showTrackTitles() {
     });
 }
 showTrackTitles();
-
-// Плавная прокрутка к каждому новому треку
-const tracks = document.querySelectorAll('.track');
-let currentTrackIndex = 0;
-
-audioElements.forEach((audio, index) => {
-    audio.addEventListener('ended', () => {
-        if (index + 1 < audioElements.length) {
-            audioElements[index + 1].play();
-            tracks[index + 1].scrollIntoView({ behavior: 'smooth' });
-        }
-    });
-});
