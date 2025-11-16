@@ -1,65 +1,143 @@
-/* Общие стили для сайта */
+/* Основной стиль для страницы */
 body {
+    margin: 0;
+    padding: 0;
     font-family: 'Arial', sans-serif;
     background-color: #121212;
     color: #ddd;
-    margin: 0;
+}
+
+/* Контейнер для всей страницы */
+#main-container {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Визуальный эффект для секции intro */
+#intro {
+    position: relative;
+    background: url('images/dark-wall.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7); /* Эффект тени для текста */
+}
+
+/* Анимация трещин на стенах */
+@keyframes crack-animation {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+/* Добавление трещин на стенах */
+.crack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/crack.png');
+    background-size: contain;
+    animation: crack-animation 5s infinite;
+    pointer-events: none; /* Не даём элементу блокировать другие действия */
+}
+
+/* Анимация для воды внизу */
+.water {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: rgba(0, 0, 255, 0.3);
+    animation: water-motion 10s infinite linear;
+}
+
+@keyframes water-motion {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(20px);
+    }
+}
+
+/* Динамичные крысы */
+.rat {
+    position: absolute;
+    animation: move-rat 15s linear infinite;
+    z-index: 1;
+}
+
+@keyframes move-rat {
+    0% {
+        left: -100px;
+        top: 80%;
+    }
+    50% {
+        left: 50%;
+        top: 50%;
+    }
+    100% {
+        left: 100%;
+        top: 80%;
+    }
+}
+
+/* Стиль для заголовков */
+h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #f1c40f;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Стиль для параграфов */
+p {
+    font-size: 1.5rem;
+    color: #ccc;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+/* Альбомная секция */
+#album {
+    background: #1a1a1a;
+    color: #ddd;
+    padding: 50px;
+    text-align: center;
+}
+
+#album h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#album ul {
+    list-style: none;
     padding: 0;
 }
 
-#main-container {
-    display: flex;
-    flex-direction: column;
+#album li {
+    margin: 10px 0;
 }
 
-section {
-    padding: 100px 20px;
-    text-align: center;
-    opacity: 0; /* Изначально скрытые элементы */
-    transition: opacity 1s ease-in-out; /* Плавное появление */
-}
-
-section.visible {
-    opacity: 1; /* Показываем элемент */
-}
-
-#intro {
-    background-image: url('https://unclekorney.github.io/fountain-album/images/intro-bg.jpg');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-}
-
-/* Стили для треков */
-#track1, #track2 {
-    background-color: #1a1a1a;
-    margin: 20px 0;
-    border-radius: 8px;
-}
-
-#track1 h2, #track2 h2 {
-    font-size: 2.5rem;
+#album a {
     color: #f1c40f;
+    text-decoration: none;
 }
 
-/* Добавляем анимацию для прокрутки */
-.fade-in {
-    animation: fadeIn 1s ease-out forwards;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+#album a:hover {
+    text-decoration: underline;
 }
