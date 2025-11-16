@@ -34,7 +34,7 @@ section.visible {
 }
 
 /* Стили для треков */
-#track1, #track2, #credits {
+#track1, #track2 {
     background-color: #1a1a1a;
     margin: 20px 0;
     border-radius: 8px;
