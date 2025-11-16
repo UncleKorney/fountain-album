@@ -13,19 +13,46 @@
         <section id="intro">
             <div class="crack"></div> <!-- Анимация трещин на стенах -->
             <h1>Как будто ты в фонтан упал</h1>
-            <p>Добро пожаловать в антиутопический мир, полный сырости, мрака и отчаяния...</p>
+            <p>Добро пожаловать в канализацию...</p>
             <div class="water"></div> <!-- Анимация воды -->
         </section>
 
-        <!-- Пример секции с музыкой (не готово до конца, просто для контекста) -->
+        <!-- Секция альбома -->
         <section id="album">
             <h2>Альбом "Как будто ты в фонтан упал"</h2>
+
+            <!-- Обложка альбома -->
+            <div class="album-cover">
+                <img src="images/album-cover.jpg" alt="Обложка альбома" />
+            </div>
+
+            <!-- Список треков с элементами управления -->
             <ul>
-                <li class="track"><a href="#">Трек 1</a><audio src="audio/track1.mp3"></audio></li>
-                <li class="track"><a href="#">Трек 2</a><audio src="audio/track2.mp3"></audio></li>
-                <li class="track"><a href="#">Трек 3</a><audio src="audio/track3.mp3"></audio></li>
-                <li class="track"><a href="#">Трек 4</a><audio src="audio/track4.mp3"></audio></li>
-                <!-- Дальше по списку -->
+                <li class="track" id="track1">
+                    <a href="#">Трек 1: "Название трека"</a>
+                    <audio src="audio/track1.mp3"></audio>
+                    <div class="controls">
+                        <button class="play-pause-btn" data-track="1">▶️</button>
+                        <input type="range" class="progress-bar" value="0" min="0" max="100" step="1" />
+                    </div>
+                </li>
+                <li class="track" id="track2">
+                    <a href="#">Трек 2: "Название трека"</a>
+                    <audio src="audio/track2.mp3"></audio>
+                    <div class="controls">
+                        <button class="play-pause-btn" data-track="2">▶️</button>
+                        <input type="range" class="progress-bar" value="0" min="0" max="100" step="1" />
+                    </div>
+                </li>
+                <li class="track" id="track3">
+                    <a href="#">Трек 3: "Название трека"</a>
+                    <audio src="audio/track3.mp3"></audio>
+                    <div class="controls">
+                        <button class="play-pause-btn" data-track="3">▶️</button>
+                        <input type="range" class="progress-bar" value="0" min="0" max="100" step="1" />
+                    </div>
+                </li>
+                <!-- Добавьте другие треки по аналогии -->
             </ul>
         </section>
 
