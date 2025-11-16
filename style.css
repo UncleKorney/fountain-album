@@ -141,3 +141,27 @@ p {
 #album a:hover {
     text-decoration: underline;
 }
+
+/* Стиль для секций, которые будут появляться */
+section {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+section.visible {
+    opacity: 1;
+}
+
+/* Эффект для плавного появления */
+section.fade-in {
+    animation: fadeInAnimation 1s forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
