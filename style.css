@@ -24,7 +24,7 @@ section.visible {
 }
 
 #intro {
-    background: url('images/intro-bg.jpg') no-repeat center center fixed;
+    background: url('../images/intro-bg.jpg') no-repeat center center fixed; /* Исправленный путь */
     background-size: cover;
     height: 100vh;
     display: flex;
