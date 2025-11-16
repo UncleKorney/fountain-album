@@ -3,47 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Как будто ты в фонтан упал</title>
-    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Как будто ты в фонтан упал - Увертюра Иордан</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="fog"></div>
 
-    <div id="main-container">
-        <!-- Секция Intro с фоном, трещинами и анимацией воды -->
-        <section id="intro">
-            <div class="crack"></div> <!-- Анимация трещин на стенах -->
-            <h1>Как будто ты в фонтан упал</h1>
-            <p>Добро пожаловать в антиутопический мир, полный сырости, мрака и отчаяния...</p>
-            <div class="water"></div> <!-- Анимация воды -->
-        </section>
+    <header>
+        <h1 class="neon-light">Как будто ты в фонтан упал</h1>
+        <p class="neon-light">Альбом группы Увертюра Иордан</p>
+    </header>
 
-        <!-- Пример секции с музыкой (не готово до конца, просто для контекста) -->
-        <section id="album">
-            <h2>Альбом "Как будто ты в фонтан упал"</h2>
-            <ul>
-                <li><a href="#">Трек 1</a></li>
-                <li><a href="#">Трек 2</a></li>
-                <li><a href="#">Трек 3</a></li>
-                <!-- Дальше по списку -->
-            </ul>
-        </section>
+    <section id="intro" class="section">
+        <div class="background">
+            <img src="images/dark-wall.jpg" alt="Background wall" class="background-image">
+        </div>
+        <div class="content">
+            <h2 class="title">Ты попал в канализацию...</h2>
+            <p class="description">Погружаемся в антиутопию, где главный герой борется с крысиным королём, преодолевая сырость, мрак и разрушенные города...</p>
+        </div>
+    </section>
 
-        <!-- Динамичные крысы -->
-        <div class="rat" style="top: 80%; left: 10%;">
-            <img src="images/rat.png" alt="Rat" />
+    <section id="album" class="section">
+        <h2 class="neon-light">Треки</h2>
+        <div class="tracks">
+            <div class="track">
+                <audio controls autoplay>
+                    <source src="audio/track1.mp3" type="audio/mp3">
+                </audio>
+                <p class="track-title">Трек 1: В начале</p>
+            </div>
+            <!-- Повтори блоки для других треков -->
         </div>
-        <div class="rat" style="top: 60%; left: 30%;">
-            <img src="images/rat.png" alt="Rat" />
-        </div>
-        <div class="rat" style="top: 90%; left: 50%;">
-            <img src="images/rat.png" alt="Rat" />
-        </div>
+    </section>
 
-        <!-- Канализационные трубы -->
-        <div class="pipe">
-            <img src="images/pipe.png" alt="Pipe" />
+    <footer>
+        <div class="rat-king-symbol">
+            <img src="images/rat-king-symbol.png" alt="Symbol of Rat King" />
         </div>
-    </div>
+    </footer>
+
+    <audio id="background-sound" loop autoplay>
+        <source src="audio/fond_noise.mp3" type="audio/mp3">
+        Ваш браузер не поддерживает аудио.
+    </audio>
+    <audio id="rats-squeak" loop autoplay>
+        <source src="audio/rats_squeak.mp3" type="audio/mp3">
+        Ваш браузер не поддерживает аудио.
+    </audio>
 
     <script src="script.js"></script>
 </body>
