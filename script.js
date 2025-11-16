@@ -110,3 +110,27 @@ function playTrackOnLoad() {
 document.addEventListener("DOMContentLoaded", function() {
     playTrackOnLoad();
 });
+
+// Отображение обложки альбома
+function displayAlbumCover() {
+    const albumCover = document.createElement("div");
+    albumCover.classList.add("album-cover");
+    albumCover.style.backgroundImage = 'url("images/album-cover.jpg")'; // Путь к обложке альбома
+    albumCover.style.backgroundSize = 'cover';
+    albumCover.style.backgroundPosition = 'center';
+    albumCover.style.width = '100%';
+    albumCover.style.height = '300px';
+    document.body.appendChild(albumCover);
+}
+displayAlbumCover();
+
+// Обработчик для отображения заголовков треков с плавным появлением
+function showTrackTitles() {
+    const trackTitles = document.querySelectorAll('.track');
+    trackTitles.forEach((track, index) => {
+        setTimeout(() => {
+            track.classList.add("visible");
+        }, index * 500); // Задержка для появления треков
+    });
+}
+showTrackTitles();
